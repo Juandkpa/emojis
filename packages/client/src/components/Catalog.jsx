@@ -1,27 +1,19 @@
 import { useQuery } from 'react-query';
+import getEmojis  from '../api/emojis';
 
-const renderEmojis = (data) => {
-    const elements = [];
+const renderEmoji = ({_id, name ='test', command, image}) => {    
 
-    for (let prop in data) {
-        const element = (
-            <button class="card">
-                <span><b>use: </b> :{prop}:</span>
-                <img src={data[prop]} alt={prop} />
+    return (
+            <button key={_id} className="card">
+                <span><b>Command: </b> {command}</span>
+                <img src={image} alt={name} />
             </button>
-        );
-        elements.push(element);
-    }
-
-    return elements;
+        );        
+    
 };
 
 const Catalog = () => {
-    const { isLoading, error, data } = useQuery('emojis', () => {
-        return fetch(
-            'https://api.github.com/emojis'
-        ).then(res => res.json())
-    });
+    const { isLoading, error, data } = useQuery('emojis', getEmojis);
     
     if (isLoading) return 'Loading ...';
 
@@ -30,7 +22,7 @@ const Catalog = () => {
 
     return (
         <div>
-            {renderEmojis(data)}
+            {data.map(renderEmoji)}
         </div>        
     );
 };
