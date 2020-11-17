@@ -3,7 +3,8 @@
     "name": "emojis",
     "workspaces": ["packages/*"],
     "scripts": {
-        "client:start": "yarn workspace client start"
+        "client:start": "yarn workspace client start",
+        "server:start": "yarn workspace server dev"
     },
     "version": "1.0.0",
     "main": "index.js",
