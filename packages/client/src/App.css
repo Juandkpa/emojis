@@ -1,0 +1,22 @@
+body {
+  background: rgb(34, 33, 33);
+  color: white;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 25%;
+  border: 1px rgb(87, 86, 86) solid;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 8px;
+  background: rgb(59,59,59);
+  color: white;
+}
+
+.card > img {
+  width: 50px;
+  border-radius: 50%;
+}
