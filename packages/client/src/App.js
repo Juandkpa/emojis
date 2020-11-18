@@ -3,7 +3,15 @@ import { ReactQueryDevtools } from 'react-query-devtools';
 import Catalog from './components/Catalog';
 import './App.css';
 
-const queryCache = new QueryCache();
+
+const queryCache = new QueryCache({
+  defaultConfig: {
+    queries: {
+      refetchOnWindowFocus: false,
+      retry: 2
+    },
+  },
+});
 
 const App = () => {
   return (
