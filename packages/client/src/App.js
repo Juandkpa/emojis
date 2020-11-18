@@ -1,8 +1,9 @@
+import React from 'react';
+import { BrowserRouter as Router  } from 'react-router-dom';
 import { QueryCache, ReactQueryCacheProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query-devtools';
-import Catalog from './components/Catalog';
+import Layout from './components/Layout';
 import './App.css';
-
 
 const queryCache = new QueryCache({
   defaultConfig: {
@@ -13,14 +14,13 @@ const queryCache = new QueryCache({
   },
 });
 
-const App = () => {
-  return (
-    <ReactQueryCacheProvider queryCache={queryCache}>
-      <h2>Github Emojis</h2>
-      <Catalog />
+const App = () => (
+  <ReactQueryCacheProvider queryCache={queryCache}>
+    <Router>
+      <Layout />
       <ReactQueryDevtools instalIsOpen />
-    </ReactQueryCacheProvider>
-  )
-}
+    </Router>      
+  </ReactQueryCacheProvider>
+);
 
 export { App as default };
