@@ -4,15 +4,15 @@ import { useQueryCache } from 'react-query';
 
 const Home = () => {
     const [count, setCount] = useState(0);
-    const queryCache = useQueryCache();
+    //const queryCache = useQueryCache();
 
-    useEffect(() => {
-        const prefetchTodos = async () => {
-            console.log("hitting prefech todos")
-            await queryCache.prefetchQuery('emojis', getEmojis )        
-        }
-        prefetchTodos();
-    }, []);    
+    // useEffect(() => {
+    //     const prefetchTodos = async () => {
+    //         console.log("hitting prefech todos")
+    //         await queryCache.prefetchQuery('emojis', getEmojis )        
+    //     }
+    //     prefetchTodos();
+    // }, []);    
 
     return (
         <div>
