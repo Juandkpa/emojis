@@ -48,7 +48,7 @@ const renderEmoji = ({_id, name ='test', command, image}) => {
 const Catalog = () => {
     const { isLoading, error, data } = useQuery('emojis', getEmojis, {
         initialData,
-        initialStale: true,
+        initialStale: true
     });
     
     if (isLoading) return 'Loading ...';

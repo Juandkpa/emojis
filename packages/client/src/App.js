@@ -9,7 +9,8 @@ const queryCache = new QueryCache({
   defaultConfig: {
     queries: {
       refetchOnWindowFocus: false,
-      retry: 2
+      retry: 2,
+      staleTime: Infinity
     },
   },
 });
