@@ -2,11 +2,24 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import { QueryCache, ReactQueryCacheProvider } from 'react-query';
 import reportWebVitals from './reportWebVitals';
+
+const queryCache = new QueryCache({
+  defaultConfig: {
+    queries: {
+      refetchOnWindowFocus: false,
+      retry: 2,
+      staleTime: Infinity
+    },
+  },
+});
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+      <ReactQueryCacheProvider queryCache={queryCache}>
+        <App />
+      </ReactQueryCacheProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

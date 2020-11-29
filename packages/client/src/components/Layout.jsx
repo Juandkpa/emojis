@@ -2,6 +2,7 @@ import Nav from '../components/Nav';
 import Routes from '../Routes';
 
 const Layout = () => {
+    
     return (
         <div className="app">
             <Nav />
