@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
-import app  from './app';
-import feedEmojis from './services/github'
+import server  from './app';
+import { feedEmojis } from './services/github'
 
 const init = async () => {
     try {
@@ -15,9 +15,8 @@ const init = async () => {
         console.log(error);
     }
 };
+init();
 
-app.listen(5000, () => {
+server.listen(5000, () => {
     console.log('Listeng on port 5000');
 });
-
-init();
